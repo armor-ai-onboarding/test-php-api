@@ -36,4 +36,17 @@ $app->group('/api', function () use ($app) {
     });
 });
 
+$app->subgroup('/api', function () use ($app) {
+
+    $dataForApi = ['yo', 777];
+
+    // api route "test" which just gives back some demo data
+    $app->get('/api/subgroup', function ($request, $response, $args) use ($dataForApi) {
+        return $response->withJson([
+            'demoText' => $dataForApi[0], // "yo"
+            'demoNumbers' => $dataForApi[1] // "777"
+        ]);
+    });
+});
+
 $app->run();
