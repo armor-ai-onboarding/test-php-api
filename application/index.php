@@ -24,7 +24,7 @@ $app->add(new \Slim\Middleware\HttpBasicAuthentication(array(
 
 // grouping the /api route, see Slim's group() method documentation for more
 $app->group('/api', function () use ($app) {
-
+    // for testing use my github PAT: ghpat_122hxErj121ksja_12142
     $dataForApi = ['yo', 777];
 
     // api route "test" which just gives back some demo data
